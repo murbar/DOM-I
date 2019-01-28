@@ -87,3 +87,14 @@ bottomContentBHead.textContent = mainContent["product-h4"];
 bottomContentBText.textContent = mainContent["product-content"];
 bottomContentCHead.textContent = mainContent["vision-h4"];
 bottomContentCText.textContent = mainContent["vision-content"];
+
+// contact
+const contactHead = document.querySelector('section.contact h4')
+const contactPA = document.querySelector('section.contact p:nth-of-type(1)')
+const contactPB = document.querySelector('section.contact p:nth-of-type(2)')
+const contactPC = document.querySelector('section.contact p:nth-of-type(3)')
+
+contactHead.textContent = siteContent.contact["contact-h4"];
+contactPA.textContent = siteContent.contact.address;
+contactPB.textContent = siteContent.contact.phone;
+contactPC.textContent = siteContent.contact.email;
