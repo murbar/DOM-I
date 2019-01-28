@@ -3,7 +3,7 @@ function DigitalTimer(config) {
     this.elapsedMs = 0;
 
     this.init = () => {
-        this.interval = setInterval(this.main, this.config.intervalMs);
+        this.config.startBtn.addEventListener('click', this.start);
     };
     
     this.updateDisplay = () => {
@@ -26,6 +26,10 @@ function DigitalTimer(config) {
             this.updateDisplay(this.elapsedMs);
         }
     };
+
+    this.start = () => {
+        this.interval = setInterval(this.main, this.config.intervalMs);
+    }
     
     this.stop = () => {
         this.config.timeEl.style.color = 'red';
@@ -40,10 +44,8 @@ const timer = new DigitalTimer({
     secondTens: document.getElementById('secondTens'), 
     secondOnes: document.getElementById('secondOnes'), 
     msHundreds: document.getElementById('msHundreds'), 
-    msTens: document.getElementById('msTens')
+    msTens: document.getElementById('msTens'),
+    startBtn: document.getElementById('start-btn'),
+    resetBtn: document.getElementById('reset-btn')
 })
-
-const startBtn = document.getElementById('start-btn');
-startBtn.addEventListener('click', () => {
-    timer.init();
-})
+timer.init();
