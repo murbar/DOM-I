@@ -50,7 +50,40 @@ navLinks.forEach((link, i) => {
 // cta
 const ctaH1 = document.querySelector('section.cta h1');
 const ctaBtn = document.querySelector('section.cta button');
-const ctaImg = document.querySelector('section.cta img');
+const ctaImg = document.querySelector('#cta-img');
+
 ctaH1.textContent = siteContent.cta.h1;
 ctaBtn.textContent = siteContent.cta.button;
 ctaImg.src = siteContent.cta["img-src"];
+
+// main content, top
+const mainContent = siteContent["main-content"]
+const topContentAHead = document.querySelector('.top-content > div:nth-child(1) h4');
+const topContentAText = document.querySelector('.top-content > div:nth-child(1) p');
+const topContentBHead = document.querySelector('.top-content > div:nth-child(2) h4');
+const topContentBText = document.querySelector('.top-content > div:nth-child(2) p');
+
+topContentAHead.textContent = mainContent["features-h4"];
+topContentAText.textContent = mainContent["features-content"];
+topContentBHead.textContent = mainContent["about-h4"];
+topContentBText.textContent = mainContent["about-content"];
+
+// main content, img
+const mainContentImg = document.querySelector('#middle-img');
+
+mainContentImg.src = mainContent["middle-img-src"];
+
+// main content, bottom
+const bottomContentAHead = document.querySelector('.bottom-content > div:nth-child(1) h4')
+const bottomContentAText = document.querySelector('.bottom-content > div:nth-child(1) p')
+const bottomContentBHead = document.querySelector('.bottom-content > div:nth-child(2) h4')
+const bottomContentBText = document.querySelector('.bottom-content > div:nth-child(2) p')
+const bottomContentCHead = document.querySelector('.bottom-content > div:nth-child(3) h4')
+const bottomContentCText = document.querySelector('.bottom-content > div:nth-child(3) p')
+
+bottomContentAHead.textContent = mainContent["services-h4"];
+bottomContentAText.textContent = mainContent["services-content"];
+bottomContentBHead.textContent = mainContent["product-h4"];
+bottomContentBText.textContent = mainContent["product-content"];
+bottomContentCHead.textContent = mainContent["vision-h4"];
+bottomContentCText.textContent = mainContent["vision-content"];
