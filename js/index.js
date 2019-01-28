@@ -98,3 +98,8 @@ contactHead.textContent = siteContent.contact["contact-h4"];
 contactPA.textContent = siteContent.contact.address;
 contactPB.textContent = siteContent.contact.phone;
 contactPC.textContent = siteContent.contact.email;
+
+// footer
+const footerP = document.querySelector('footer p');
+
+footerP.textContent = siteContent.footer.copyright;
