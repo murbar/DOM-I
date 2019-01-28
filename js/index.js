@@ -46,3 +46,11 @@ const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach((link, i) => {
   link.textContent = siteContent.nav[`nav-item-${i + 1}`];
 });
+
+// cta
+const ctaH1 = document.querySelector('section.cta h1');
+const ctaBtn = document.querySelector('section.cta button');
+const ctaImg = document.querySelector('section.cta img');
+ctaH1.textContent = siteContent.cta.h1;
+ctaBtn.textContent = siteContent.cta.button;
+ctaImg.src = siteContent.cta["img-src"];
