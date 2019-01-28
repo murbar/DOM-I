@@ -33,7 +33,7 @@ function DigitalTimer(config) {
     };
 }
 
-const app = new DigitalTimer({
+const timer = new DigitalTimer({
     intervalMs: 10,
     stopMs: 10000,
     timeEl: document.querySelector('body > div.digits'),
@@ -42,4 +42,8 @@ const app = new DigitalTimer({
     msHundreds: document.getElementById('msHundreds'), 
     msTens: document.getElementById('msTens')
 })
-app.init();
+
+const startBtn = document.getElementById('start-btn');
+startBtn.addEventListener('click', () => {
+    timer.init();
+})
