@@ -47,21 +47,6 @@ navLinks.forEach((link, i) => {
   link.textContent = siteContent.nav[`nav-item-${i + 1}`];
 });
 
-const navEl = document.querySelector('nav');
-const linkToAppend = document.createElement('a');
-const linkToPrepend = document.createElement('a');
-linkToPrepend.textContent = 'Home'
-linkToPrepend.href = '#';
-linkToAppend.textContent = 'Blog';
-linkToAppend.href = '#';
-navEl.appendChild(linkToAppend);
-navEl.prepend(linkToPrepend);
-
-navLinks = document.querySelectorAll('nav a');
-navLinks.forEach((link) => {
-  link.style.color = 'green';
-});
-
 // cta
 const ctaH1 = document.querySelector('section.cta h1');
 const ctaBtn = document.querySelector('section.cta button');
@@ -118,3 +103,34 @@ contactPC.textContent = siteContent.contact.email;
 const footerP = document.querySelector('footer p');
 
 footerP.textContent = siteContent.footer.copyright;
+
+// stretch, event listener
+// click logo to toggle nav link color and additional nav links
+logo.addEventListener('click', () => {
+  const navEl = document.querySelector('nav');
+  navLinks = document.querySelectorAll('nav a');
+
+  if (navLinks.length === 8) {
+    navLinks[0].remove();
+    navLinks[7].remove();
+
+    navLinks.forEach((link) => {
+      link.removeAttribute('style');
+    });
+    return;
+  }
+
+  const linkToAppend = document.createElement('a');
+  const linkToPrepend = document.createElement('a');
+  linkToPrepend.textContent = 'Home'
+  linkToPrepend.href = '#';
+  linkToAppend.textContent = 'Blog';
+  linkToAppend.href = '#';
+  navEl.appendChild(linkToAppend);
+  navEl.prepend(linkToPrepend);
+  
+  navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach((link) => {
+    link.style.color = 'green';
+  });
+});
