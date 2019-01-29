@@ -30,6 +30,7 @@ function DigitalTimer(config) {
     };
 
     this.start = () => {
+        // this.startTime = new Date();
         this.config.startBtn.setAttribute('disabled', '');
         this.interval = setInterval(this.main, this.config.intervalMs);
     }
@@ -37,6 +38,8 @@ function DigitalTimer(config) {
     this.stop = () => {
         this.config.startBtn.removeAttribute('disabled');
         clearInterval(this.interval);
+        // this.endTime = new Date();
+        // console.log('Drift: ', (this.endTime - this.startTime) - this.config.stopMs);
     };
 
     this.reset = () => {
