@@ -4,6 +4,7 @@ function DigitalTimer(config) {
 
     this.init = () => {
         this.config.startBtn.addEventListener('click', this.start);
+
     };
     
     this.updateDisplay = () => {
@@ -28,11 +29,13 @@ function DigitalTimer(config) {
     };
 
     this.start = () => {
+        this.config.startBtn.setAttribute('disabled', '');
         this.interval = setInterval(this.main, this.config.intervalMs);
     }
     
     this.stop = () => {
         this.config.timeEl.style.color = 'red';
+        this.config.startBtn.removeAttribute('disabled');
         clearInterval(this.interval);
     };
 }
