@@ -40,3 +40,81 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// nav
+let navLinks = document.querySelectorAll('nav a');
+navLinks.forEach((link, i) => {
+  link.textContent = siteContent.nav[`nav-item-${i + 1}`];
+});
+
+const navEl = document.querySelector('nav');
+const linkToAppend = document.createElement('a');
+const linkToPrepend = document.createElement('a');
+linkToPrepend.textContent = 'Home'
+linkToPrepend.href = '#';
+linkToAppend.textContent = 'Blog';
+linkToAppend.href = '#';
+navEl.appendChild(linkToAppend);
+navEl.prepend(linkToPrepend);
+
+navLinks = document.querySelectorAll('nav a');
+navLinks.forEach((link) => {
+  link.style.color = 'green';
+});
+
+// cta
+const ctaH1 = document.querySelector('section.cta h1');
+const ctaBtn = document.querySelector('section.cta button');
+const ctaImg = document.querySelector('#cta-img');
+
+ctaH1.textContent = siteContent.cta.h1;
+ctaBtn.textContent = siteContent.cta.button;
+ctaImg.src = siteContent.cta["img-src"];
+
+// main content, top
+const mainContent = siteContent["main-content"]
+const topContentAHead = document.querySelector('.top-content > div:nth-child(1) h4');
+const topContentAText = document.querySelector('.top-content > div:nth-child(1) p');
+const topContentBHead = document.querySelector('.top-content > div:nth-child(2) h4');
+const topContentBText = document.querySelector('.top-content > div:nth-child(2) p');
+
+topContentAHead.textContent = mainContent["features-h4"];
+topContentAText.textContent = mainContent["features-content"];
+topContentBHead.textContent = mainContent["about-h4"];
+topContentBText.textContent = mainContent["about-content"];
+
+// main content, img
+const mainContentImg = document.querySelector('#middle-img');
+
+mainContentImg.src = mainContent["middle-img-src"];
+
+// main content, bottom
+const bottomContentAHead = document.querySelector('.bottom-content > div:nth-child(1) h4')
+const bottomContentAText = document.querySelector('.bottom-content > div:nth-child(1) p')
+const bottomContentBHead = document.querySelector('.bottom-content > div:nth-child(2) h4')
+const bottomContentBText = document.querySelector('.bottom-content > div:nth-child(2) p')
+const bottomContentCHead = document.querySelector('.bottom-content > div:nth-child(3) h4')
+const bottomContentCText = document.querySelector('.bottom-content > div:nth-child(3) p')
+
+bottomContentAHead.textContent = mainContent["services-h4"];
+bottomContentAText.textContent = mainContent["services-content"];
+bottomContentBHead.textContent = mainContent["product-h4"];
+bottomContentBText.textContent = mainContent["product-content"];
+bottomContentCHead.textContent = mainContent["vision-h4"];
+bottomContentCText.textContent = mainContent["vision-content"];
+
+// contact
+const contactHead = document.querySelector('section.contact h4')
+const contactPA = document.querySelector('section.contact p:nth-of-type(1)')
+const contactPB = document.querySelector('section.contact p:nth-of-type(2)')
+const contactPC = document.querySelector('section.contact p:nth-of-type(3)')
+
+contactHead.textContent = siteContent.contact["contact-h4"];
+contactPA.textContent = siteContent.contact.address;
+contactPB.textContent = siteContent.contact.phone;
+contactPC.textContent = siteContent.contact.email;
+
+// footer
+const footerP = document.querySelector('footer p');
+
+footerP.textContent = siteContent.footer.copyright;
