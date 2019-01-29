@@ -4,7 +4,7 @@ function DigitalTimer(config) {
 
     this.init = () => {
         this.config.startBtn.addEventListener('click', this.start);
-
+        this.config.resetBtn.addEventListener('click', this.reset);
     };
     
     this.updateDisplay = () => {
@@ -22,9 +22,10 @@ function DigitalTimer(config) {
         const stopCondition = this.elapsedMs >= this.config.stopMs + 1;
 
         if (stopCondition) {
+            this.config.timeEl.style.color = 'red';
             this.stop();
         } else {
-            this.updateDisplay(this.elapsedMs);
+            this.updateDisplay();
         }
     };
 
@@ -34,9 +35,15 @@ function DigitalTimer(config) {
     }
     
     this.stop = () => {
-        this.config.timeEl.style.color = 'red';
         this.config.startBtn.removeAttribute('disabled');
         clearInterval(this.interval);
+    };
+
+    this.reset = () => {
+        this.stop();
+        this.elapsedMs = 0;
+        this.updateDisplay();
+        this.config.timeEl.removeAttribute('style');
     };
 }
 
