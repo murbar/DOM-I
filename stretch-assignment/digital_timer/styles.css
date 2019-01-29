@@ -18,5 +18,19 @@ body {
 .controls {
   width: 100%;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
+}
+
+button {
+  font-size: 22px;
+  margin: 10px;
+  background: dodgerblue;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 20px;
+  color: white;
+}
+
+button[disabled] {
+  background: lightgrey;
 }
