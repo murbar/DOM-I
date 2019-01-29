@@ -2,13 +2,35 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: wrap;
 }
 
 .digit {
   display: inline-block;
   font-size: 80px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .redDigit {
   color: red;
+}
+
+.controls {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+button {
+  font-size: 22px;
+  margin: 10px;
+  background: dodgerblue;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 20px;
+  color: white;
+}
+
+button[disabled] {
+  background: lightgrey;
 }
